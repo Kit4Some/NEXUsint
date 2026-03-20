@@ -32,7 +32,7 @@
 ---
 
 <p align="center">
-  <video src="https://github.com/user-attachments/assets/4e21d07d-239a-4ca9-a59d-123c69a04dfb" controls width="600"></video>
+  <video src="https://github.com/user-attachments/assets/43acdc9f-17d3-45c8-85ff-e5bd325adcf8" controls width="600"></video>
   <br>
   <em>NEXUS in Action — Real-time Multi-INT OSINT fusion with 30+ live data sources</em>
 </p>
