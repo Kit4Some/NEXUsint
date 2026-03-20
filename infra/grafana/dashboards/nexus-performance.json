@@ -1,0 +1,91 @@
+{
+  "annotations": { "list": [] },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 1,
+  "id": null,
+  "links": [],
+  "panels": [
+    {
+      "title": "Neo4j Query Duration (P95)",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 0 },
+      "targets": [
+        {
+          "expr": "histogram_quantile(0.95, sum(rate(nexus_neo4j_query_duration_seconds_bucket[5m])) by (le, query_type))",
+          "legendFormat": "{{query_type}} P95"
+        }
+      ]
+    },
+    {
+      "title": "Cache Hit/Miss Rate",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 0 },
+      "targets": [
+        {
+          "expr": "sum by (domain) (rate(nexus_cache_hits_total[5m]))",
+          "legendFormat": "{{domain}} hits/s"
+        },
+        {
+          "expr": "sum by (domain) (rate(nexus_cache_misses_total[5m]))",
+          "legendFormat": "{{domain}} misses/s"
+        }
+      ]
+    },
+    {
+      "title": "Slowest Endpoints (P99 Latency)",
+      "type": "table",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 8 },
+      "targets": [
+        {
+          "expr": "topk(10, histogram_quantile(0.99, sum by (path, le) (rate(nexus_http_request_duration_seconds_bucket[5m]))))",
+          "legendFormat": "{{path}}",
+          "format": "table",
+          "instant": true
+        }
+      ]
+    },
+    {
+      "title": "Request Duration Heatmap",
+      "type": "heatmap",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 8 },
+      "targets": [
+        {
+          "expr": "sum(increase(nexus_http_request_duration_seconds_bucket[5m])) by (le)",
+          "legendFormat": "{{le}}"
+        }
+      ]
+    },
+    {
+      "title": "Neo4j Query Rate by Type",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 0, "y": 16 },
+      "targets": [
+        {
+          "expr": "sum by (query_type) (rate(nexus_neo4j_query_duration_seconds_count[5m]))",
+          "legendFormat": "{{query_type}}"
+        }
+      ]
+    },
+    {
+      "title": "Collection Job Duration",
+      "type": "timeseries",
+      "gridPos": { "h": 8, "w": 12, "x": 12, "y": 16 },
+      "targets": [
+        {
+          "expr": "sum by (int_type, status) (increase(nexus_collection_jobs_total[5m]))",
+          "legendFormat": "{{int_type}} {{status}}"
+        }
+      ]
+    }
+  ],
+  "refresh": "30s",
+  "schemaVersion": 39,
+  "tags": ["nexus", "performance"],
+  "templating": { "list": [] },
+  "time": { "from": "now-3h", "to": "now" },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "NEXUS OSINT — Performance",
+  "uid": "nexus-performance"
+}

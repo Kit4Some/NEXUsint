@@ -1,0 +1,29 @@
+appId: com.nexus.osint
+productName: NEXUS OSINT
+directories:
+  output: release
+files:
+  - dist/**/*
+  - dist-electron/**/*
+publish:
+  provider: github
+  owner: nexus-osint
+  repo: nexus-msint
+  releaseType: release
+win:
+  target:
+    - nsis
+  icon: src/assets/icon.ico
+mac:
+  target:
+    - dmg
+  icon: src/assets/icon.icns
+linux:
+  target:
+    - AppImage
+  icon: src/assets/icon.png
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+releaseInfo:
+  releaseNotesFile: CHANGELOG.md

@@ -1,0 +1,45 @@
+@prefix nexus: <http://nexus-osint.org/ontology#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# POLE Schema in Turtle format
+
+nexus:Person a owl:Class ;
+    rdfs:subClassOf nexus:Entity ;
+    rdfs:label "Person" .
+
+nexus:Object a owl:Class ;
+    rdfs:subClassOf nexus:Entity ;
+    rdfs:label "Object" .
+
+nexus:Location a owl:Class ;
+    rdfs:subClassOf nexus:Entity ;
+    rdfs:label "Location" .
+
+nexus:Event a owl:Class ;
+    rdfs:subClassOf nexus:Entity ;
+    rdfs:label "Event" .
+
+# Relationships
+nexus:locatedAt a owl:ObjectProperty ;
+    rdfs:domain nexus:Entity ;
+    rdfs:range nexus:Location .
+
+nexus:partOf a owl:ObjectProperty ;
+    rdfs:domain nexus:Entity ;
+    rdfs:range nexus:Entity .
+
+nexus:corroboratedBy a owl:ObjectProperty ;
+    rdfs:domain nexus:Entity ;
+    rdfs:range nexus:Entity .
+
+# Metadata properties
+nexus:confidence a owl:DatatypeProperty ;
+    rdfs:range xsd:float .
+
+nexus:sourceInt a owl:DatatypeProperty ;
+    rdfs:range xsd:string .
+
+nexus:timestamp a owl:DatatypeProperty ;
+    rdfs:range xsd:dateTime .

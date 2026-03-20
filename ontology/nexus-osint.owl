@@ -1,0 +1,136 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://nexus-osint.org/ontology#"
+     xml:base="http://nexus-osint.org/ontology"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:stix="http://docs.oasis-open.org/cti/ns/stix#">
+
+    <owl:Ontology rdf:about="http://nexus-osint.org/ontology">
+        <dc:title>NEXUS OSINT Ontology</dc:title>
+        <dc:description>OWL 2 DL ontology for Multi-INT OSINT data fusion based on the POLE model</dc:description>
+        <owl:versionInfo>0.1.0</owl:versionInfo>
+    </owl:Ontology>
+
+    <!-- ========================== -->
+    <!-- Core POLE Classes          -->
+    <!-- ========================== -->
+
+    <owl:Class rdf:about="#Entity">
+        <rdfs:label>Entity</rdfs:label>
+        <rdfs:comment>Base class for all OSINT entities</rdfs:comment>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Person">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label>Person</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://xmlns.com/foaf/0.1/Person"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Object">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label>Object</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Location">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label>Location</rdfs:label>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Event">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label>Event</rdfs:label>
+    </owl:Class>
+
+    <!-- ========================== -->
+    <!-- CYBINT Extension Classes   -->
+    <!-- ========================== -->
+
+    <owl:Class rdf:about="#IPAddress">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label>IP Address</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://docs.oasis-open.org/cti/ns/stix#IPv4Addr"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Domain">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label>Domain Name</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://docs.oasis-open.org/cti/ns/stix#DomainName"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Certificate">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label>X.509 Certificate</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://docs.oasis-open.org/cti/ns/stix#X509Certificate"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#ThreatActor">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label>Threat Actor</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://docs.oasis-open.org/cti/ns/stix#ThreatActor"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Malware">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label>Malware</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Malware"/>
+    </owl:Class>
+
+    <owl:Class rdf:about="#Vulnerability">
+        <rdfs:subClassOf rdf:resource="#Entity"/>
+        <rdfs:label>Vulnerability</rdfs:label>
+        <owl:equivalentClass rdf:resource="http://docs.oasis-open.org/cti/ns/stix#Vulnerability"/>
+    </owl:Class>
+
+    <!-- ========================== -->
+    <!-- Object Properties          -->
+    <!-- ========================== -->
+
+    <owl:ObjectProperty rdf:about="#locatedAt">
+        <rdfs:domain rdf:resource="#Entity"/>
+        <rdfs:range rdf:resource="#Location"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#resolvesTo">
+        <rdfs:domain rdf:resource="#Domain"/>
+        <rdfs:range rdf:resource="#IPAddress"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#attributedTo">
+        <rdfs:domain rdf:resource="#Entity"/>
+        <rdfs:range rdf:resource="#ThreatActor"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#targets">
+        <rdfs:domain rdf:resource="#ThreatActor"/>
+        <rdfs:range rdf:resource="#Entity"/>
+    </owl:ObjectProperty>
+
+    <owl:ObjectProperty rdf:about="#uses">
+        <rdfs:domain rdf:resource="#ThreatActor"/>
+        <rdfs:range rdf:resource="#Entity"/>
+    </owl:ObjectProperty>
+
+    <!-- ========================== -->
+    <!-- Datatype Properties        -->
+    <!-- ========================== -->
+
+    <owl:DatatypeProperty rdf:about="#confidence">
+        <rdfs:domain rdf:resource="#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#sourceInt">
+        <rdfs:domain rdf:resource="#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+
+    <owl:DatatypeProperty rdf:about="#riskScore">
+        <rdfs:domain rdf:resource="#Entity"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+
+</rdf:RDF>

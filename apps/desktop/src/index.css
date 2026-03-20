@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+
+/* NEXUS Design System — Custom Theme */
+@theme {
+  --color-nexus-bg: #050812; /* Deeper, more premium dark */
+  --color-nexus-bg-secondary: #0A0F1D;
+  --color-nexus-bg-glass: rgba(10, 15, 29, 0.6);
+  --color-nexus-card: rgba(18, 25, 43, 0.7); /* Translucent cards */
+  --color-nexus-border: rgba(42, 49, 84, 0.8);
+  --color-nexus-border-light: rgba(69, 80, 126, 0.6);
+  --color-nexus-text: #E8F0FA;
+  --color-nexus-text-secondary: #8B9AB5;
+  --color-nexus-cyan: #00E5FF; /* Brighter, more electric cyan */
+  --color-nexus-cyan-muted: rgba(0, 229, 255, 0.15);
+  --color-nexus-green: #00FF9D;
+  --color-nexus-red: #FF3366;
+  --color-nexus-amber: #FFC000;
+  --color-nexus-purple: #B266FF;
+
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-heading: 'Outfit', system-ui, sans-serif;
+  --font-body: 'Satoshi', 'Outfit', system-ui, sans-serif;
+}
+
+@utility glass-panel {
+  background: var(--color-nexus-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--color-nexus-border);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+@utility premium-border {
+  border: 1px solid var(--color-nexus-border);
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Global styles */
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-nexus-bg);
+  color: var(--color-nexus-text);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-nexus-bg-secondary);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-nexus-border);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-nexus-cyan);
+}
+
+/* Scanline texture overlay */
+.scanline-overlay {
+  pointer-events: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: 
+    linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), 
+    linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 4px, 3px 100%;
+  opacity: 0.6;
+}
+
+/* Subtle vignette */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at center, transparent 40%, rgba(0, 0, 0, 0.4) 150%);
+  z-index: 9998;
+}
+
+/* Glow effects */
+.glow-cyan {
+  box-shadow: 0 0 20px rgba(0, 212, 255, 0.3);
+}
+.glow-green {
+  box-shadow: 0 0 20px rgba(0, 255, 136, 0.3);
+}
+.glow-red {
+  box-shadow: 0 0 20px rgba(255, 51, 102, 0.3);
+}
+.glow-amber {
+  box-shadow: 0 0 20px rgba(255, 184, 0, 0.3);
+}
+
+/* Text glow */
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Pulse animation */
+@keyframes pulse-glow {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Connection status indicator */
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.status-dot.connected {
+  background: var(--color-nexus-green);
+  box-shadow: 0 0 6px rgba(0, 255, 136, 0.6);
+}
+.status-dot.disconnected {
+  background: var(--color-nexus-red);
+  box-shadow: 0 0 6px rgba(255, 51, 102, 0.6);
+}
+
+/* MapLibre overrides for dark theme */
+.maplibregl-ctrl-attrib {
+  background: var(--color-nexus-bg-glass) !important;
+  color: var(--color-nexus-text-secondary) !important;
+  backdrop-filter: blur(4px);
+  border-top-left-radius: 4px;
+}

@@ -1,0 +1,12 @@
+error TS6305: Output file 'K:/OSINT/NEXUS-MSINT/apps/desktop/dist-electron/electron/main.d.ts' has not been built from source file 'K:/OSINT/NEXUS-MSINT/apps/desktop/electron/main.ts'.
+  The file is in the program because:
+    Matched by include pattern 'electron/**/*' in 'K:/OSINT/NEXUS-MSINT/apps/desktop/tsconfig.json'
+error TS6305: Output file 'K:/OSINT/NEXUS-MSINT/apps/desktop/dist-electron/electron/preload.d.ts' has not been built from source file 'K:/OSINT/NEXUS-MSINT/apps/desktop/electron/preload.ts'.
+  The file is in the program because:
+    Matched by include pattern 'electron/**/*' in 'K:/OSINT/NEXUS-MSINT/apps/desktop/tsconfig.json'
+error TS6305: Output file 'K:/OSINT/NEXUS-MSINT/apps/desktop/dist-electron/electron/security.d.ts' has not been built from source file 'K:/OSINT/NEXUS-MSINT/apps/desktop/electron/security.ts'.
+  The file is in the program because:
+    Matched by include pattern 'electron/**/*' in 'K:/OSINT/NEXUS-MSINT/apps/desktop/tsconfig.json'
+error TS6305: Output file 'K:/OSINT/NEXUS-MSINT/apps/desktop/dist-electron/electron/updater.d.ts' has not been built from source file 'K:/OSINT/NEXUS-MSINT/apps/desktop/electron/updater.ts'.
+  The file is in the program because:
+    Matched by include pattern 'electron/**/*' in 'K:/OSINT/NEXUS-MSINT/apps/desktop/tsconfig.json'

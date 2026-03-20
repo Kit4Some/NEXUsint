@@ -1,0 +1,18 @@
+@prefix nexus: <http://nexus-osint.org/ontology#> .
+@prefix stix: <http://docs.oasis-open.org/cti/ns/stix#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# STIX 2.1 ↔ NEXUS Ontology Mappings
+
+nexus:ThreatActor owl:equivalentClass stix:ThreatActor .
+nexus:Malware owl:equivalentClass stix:Malware .
+nexus:Vulnerability owl:equivalentClass stix:Vulnerability .
+nexus:IPAddress owl:equivalentClass stix:IPv4Addr .
+nexus:Domain owl:equivalentClass stix:DomainName .
+nexus:Certificate owl:equivalentClass stix:X509Certificate .
+
+# Relationship mappings
+nexus:attributedTo rdfs:subPropertyOf stix:attributed-to .
+nexus:targets rdfs:subPropertyOf stix:targets .
+nexus:uses rdfs:subPropertyOf stix:uses .

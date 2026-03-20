@@ -1,0 +1,871 @@
+[
+  {
+    "name": "Kadena Air Base",
+    "country": "Japan",
+    "operator": "USAF 18th Wing",
+    "branch": "air_force",
+    "lat": 26.351,
+    "lng": 127.767
+  },
+  {
+    "name": "Marine Corps Air Station Futenma",
+    "country": "Japan",
+    "operator": "USMC",
+    "branch": "marines",
+    "lat": 26.274,
+    "lng": 127.755
+  },
+  {
+    "name": "Fleet Activities Yokosuka",
+    "country": "Japan",
+    "operator": "USN 7th Fleet",
+    "branch": "navy",
+    "lat": 35.283,
+    "lng": 139.671
+  },
+  {
+    "name": "Fleet Activities Sasebo",
+    "country": "Japan",
+    "operator": "USN",
+    "branch": "navy",
+    "lat": 33.159,
+    "lng": 129.722
+  },
+  {
+    "name": "Misawa Air Base",
+    "country": "Japan",
+    "operator": "USAF 35th Fighter Wing",
+    "branch": "air_force",
+    "lat": 40.703,
+    "lng": 141.368
+  },
+  {
+    "name": "MCAS Iwakuni",
+    "country": "Japan",
+    "operator": "USMC / USN",
+    "branch": "marines",
+    "lat": 34.144,
+    "lng": 132.236
+  },
+  {
+    "name": "Yokota Air Base",
+    "country": "Japan",
+    "operator": "USAF 374th Airlift Wing",
+    "branch": "air_force",
+    "lat": 35.748,
+    "lng": 139.348
+  },
+  {
+    "name": "Camp Zama",
+    "country": "Japan",
+    "operator": "US Army Japan",
+    "branch": "army",
+    "lat": 35.488,
+    "lng": 139.395
+  },
+  {
+    "name": "NAF Atsugi",
+    "country": "Japan",
+    "operator": "USN",
+    "branch": "navy",
+    "lat": 35.455,
+    "lng": 139.449
+  },
+  {
+    "name": "Camp Hansen",
+    "country": "Japan",
+    "operator": "USMC",
+    "branch": "marines",
+    "lat": 26.441,
+    "lng": 127.775
+  },
+  {
+    "name": "White Beach Naval Facility",
+    "country": "Japan",
+    "operator": "USN",
+    "branch": "navy",
+    "lat": 26.334,
+    "lng": 127.897
+  },
+  {
+    "name": "Andersen Air Force Base",
+    "country": "Guam",
+    "operator": "USAF 36th Wing",
+    "branch": "air_force",
+    "lat": 13.584,
+    "lng": 144.930
+  },
+  {
+    "name": "Naval Base Guam",
+    "country": "Guam",
+    "operator": "USN",
+    "branch": "navy",
+    "lat": 13.444,
+    "lng": 144.653
+  },
+  {
+    "name": "Osan Air Base",
+    "country": "South Korea",
+    "operator": "USAF 51st Fighter Wing",
+    "branch": "air_force",
+    "lat": 37.090,
+    "lng": 127.030
+  },
+  {
+    "name": "Camp Humphreys",
+    "country": "South Korea",
+    "operator": "US Army / USFK HQ",
+    "branch": "army",
+    "lat": 36.963,
+    "lng": 127.031
+  },
+  {
+    "name": "Kunsan Air Base",
+    "country": "South Korea",
+    "operator": "USAF 8th Fighter Wing",
+    "branch": "air_force",
+    "lat": 35.904,
+    "lng": 126.616
+  },
+  {
+    "name": "Naval Station Pearl Harbor",
+    "country": "Hawaii",
+    "operator": "USN / USINDOPACOM HQ",
+    "branch": "navy",
+    "lat": 21.345,
+    "lng": -157.974
+  },
+  {
+    "name": "Diego Garcia",
+    "country": "BIOT",
+    "operator": "USN / USAF",
+    "branch": "navy",
+    "lat": -7.316,
+    "lng": 72.411
+  },
+  {
+    "name": "Naha Air Base",
+    "country": "Japan",
+    "operator": "ASDF 9th Air Wing",
+    "branch": "asdf",
+    "lat": 26.196,
+    "lng": 127.646
+  },
+  {
+    "name": "Misawa Air Base (ASDF)",
+    "country": "Japan",
+    "operator": "ASDF 3rd Air Wing",
+    "branch": "asdf",
+    "lat": 40.706,
+    "lng": 141.371
+  },
+  {
+    "name": "Chitose Air Base",
+    "country": "Japan",
+    "operator": "ASDF 2nd Air Wing",
+    "branch": "asdf",
+    "lat": 42.795,
+    "lng": 141.666
+  },
+  {
+    "name": "Nyutabaru Air Base",
+    "country": "Japan",
+    "operator": "ASDF 5th Air Wing",
+    "branch": "asdf",
+    "lat": 32.084,
+    "lng": 131.451
+  },
+  {
+    "name": "Tsuiki Air Base",
+    "country": "Japan",
+    "operator": "ASDF 8th Air Wing",
+    "branch": "asdf",
+    "lat": 33.685,
+    "lng": 131.041
+  },
+  {
+    "name": "Komatsu Air Base",
+    "country": "Japan",
+    "operator": "ASDF 6th Air Wing",
+    "branch": "asdf",
+    "lat": 36.395,
+    "lng": 136.407
+  },
+  {
+    "name": "Hamamatsu Air Base",
+    "country": "Japan",
+    "operator": "ASDF Air Defense Command",
+    "branch": "asdf",
+    "lat": 34.750,
+    "lng": 137.703
+  },
+  {
+    "name": "Iruma Air Base",
+    "country": "Japan",
+    "operator": "ASDF Central Air Command HQ",
+    "branch": "asdf",
+    "lat": 35.842,
+    "lng": 139.411
+  },
+  {
+    "name": "Yokosuka Naval Base (MSDF)",
+    "country": "Japan",
+    "operator": "MSDF Fleet HQ",
+    "branch": "msdf",
+    "lat": 35.290,
+    "lng": 139.665
+  },
+  {
+    "name": "Kure Naval Base",
+    "country": "Japan",
+    "operator": "MSDF Kure District",
+    "branch": "msdf",
+    "lat": 34.233,
+    "lng": 132.566
+  },
+  {
+    "name": "Sasebo Naval Base (MSDF)",
+    "country": "Japan",
+    "operator": "MSDF Sasebo District",
+    "branch": "msdf",
+    "lat": 33.165,
+    "lng": 129.715
+  },
+  {
+    "name": "Maizuru Naval Base",
+    "country": "Japan",
+    "operator": "MSDF Maizuru District",
+    "branch": "msdf",
+    "lat": 35.469,
+    "lng": 135.383
+  },
+  {
+    "name": "Kanoya Air Base (MSDF)",
+    "country": "Japan",
+    "operator": "MSDF Fleet Air Wing 1",
+    "branch": "msdf",
+    "lat": 31.367,
+    "lng": 130.845
+  },
+  {
+    "name": "Ominato Naval Base",
+    "country": "Japan",
+    "operator": "MSDF Ominato District",
+    "branch": "msdf",
+    "lat": 41.279,
+    "lng": 141.135
+  },
+  {
+    "name": "Camp Naha (GSDF)",
+    "country": "Japan",
+    "operator": "GSDF 15th Brigade",
+    "branch": "gsdf",
+    "lat": 26.334,
+    "lng": 127.769
+  },
+  {
+    "name": "Yonaguni Garrison",
+    "country": "Japan",
+    "operator": "GSDF Yonaguni Coastal Surveillance",
+    "branch": "gsdf",
+    "lat": 24.467,
+    "lng": 122.978
+  },
+  {
+    "name": "Miyako Island Garrison",
+    "country": "Japan",
+    "operator": "GSDF Miyako Garrison",
+    "branch": "gsdf",
+    "lat": 24.791,
+    "lng": 125.281
+  },
+  {
+    "name": "Amami Garrison",
+    "country": "Japan",
+    "operator": "GSDF Amami Garrison",
+    "branch": "gsdf",
+    "lat": 28.381,
+    "lng": 129.494
+  },
+  {
+    "name": "Fuzhou Changle Air Base",
+    "country": "China",
+    "operator": "PLAAF",
+    "branch": "air_force",
+    "lat": 25.935,
+    "lng": 119.663
+  },
+  {
+    "name": "Longtian Air Base",
+    "country": "China",
+    "operator": "PLAAF",
+    "branch": "air_force",
+    "lat": 25.674,
+    "lng": 119.507
+  },
+  {
+    "name": "Huian Air Base",
+    "country": "China",
+    "operator": "PLAAF",
+    "branch": "air_force",
+    "lat": 25.028,
+    "lng": 118.802
+  },
+  {
+    "name": "Zhangzhou Air Base",
+    "country": "China",
+    "operator": "PLAAF",
+    "branch": "air_force",
+    "lat": 24.575,
+    "lng": 117.588
+  },
+  {
+    "name": "Suixi Air Base",
+    "country": "China",
+    "operator": "PLAAF",
+    "branch": "air_force",
+    "lat": 21.374,
+    "lng": 110.228
+  },
+  {
+    "name": "Nanning Wuxu Air Base",
+    "country": "China",
+    "operator": "PLAAF",
+    "branch": "air_force",
+    "lat": 22.609,
+    "lng": 108.171
+  },
+  {
+    "name": "Jinan Yaoqiang Air Base",
+    "country": "China",
+    "operator": "PLAAF",
+    "branch": "air_force",
+    "lat": 36.857,
+    "lng": 117.216
+  },
+  {
+    "name": "Wuhan Wangjiadun Air Base",
+    "country": "China",
+    "operator": "PLAAF",
+    "branch": "air_force",
+    "lat": 30.500,
+    "lng": 114.211
+  },
+  {
+    "name": "Changsha Datuopu Air Base",
+    "country": "China",
+    "operator": "PLAAF",
+    "branch": "air_force",
+    "lat": 28.068,
+    "lng": 112.866
+  },
+  {
+    "name": "Dingxin Air Base",
+    "country": "China",
+    "operator": "PLAAF",
+    "branch": "air_force",
+    "lat": 40.296,
+    "lng": 99.750
+  },
+  {
+    "name": "Hotan Air Base",
+    "country": "China",
+    "operator": "PLAAF",
+    "branch": "air_force",
+    "lat": 37.039,
+    "lng": 79.866
+  },
+  {
+    "name": "Lingshui Air Base",
+    "country": "China",
+    "operator": "PLAAF / PLAN",
+    "branch": "air_force",
+    "lat": 18.507,
+    "lng": 110.034
+  },
+  {
+    "name": "Sanya Phoenix Air Base",
+    "country": "China",
+    "operator": "PLAN Aviation",
+    "branch": "air_force",
+    "lat": 18.303,
+    "lng": 109.412
+  },
+  {
+    "name": "Zhanjiang Naval Base",
+    "country": "China",
+    "operator": "PLAN Southern Theater",
+    "branch": "navy",
+    "lat": 21.190,
+    "lng": 110.405
+  },
+  {
+    "name": "Qingdao / Jiaozhou Naval Base",
+    "country": "China",
+    "operator": "PLAN Northern Theater",
+    "branch": "navy",
+    "lat": 36.100,
+    "lng": 120.272
+  },
+  {
+    "name": "Ningbo / Zhoushan Naval Base",
+    "country": "China",
+    "operator": "PLAN Eastern Theater",
+    "branch": "navy",
+    "lat": 29.949,
+    "lng": 122.094
+  },
+  {
+    "name": "Yulin Naval Base",
+    "country": "China",
+    "operator": "PLAN (SSBN)",
+    "branch": "navy",
+    "lat": 18.226,
+    "lng": 109.557
+  },
+  {
+    "name": "Shanghai Wusong Naval Base",
+    "country": "China",
+    "operator": "PLAN Eastern Theater",
+    "branch": "navy",
+    "lat": 31.398,
+    "lng": 121.503
+  },
+  {
+    "name": "Dalian Naval Shipyard",
+    "country": "China",
+    "operator": "PLAN (carrier construction)",
+    "branch": "navy",
+    "lat": 38.936,
+    "lng": 121.625
+  },
+  {
+    "name": "Jiangnan Shipyard (Changxing Island)",
+    "country": "China",
+    "operator": "PLAN (carrier/destroyer construction)",
+    "branch": "navy",
+    "lat": 31.358,
+    "lng": 121.746
+  },
+  {
+    "name": "Xiangshan Naval Base",
+    "country": "China",
+    "operator": "PLAN Eastern Theater",
+    "branch": "navy",
+    "lat": 29.480,
+    "lng": 121.933
+  },
+  {
+    "name": "Woody Island (Yongxing)",
+    "country": "China",
+    "operator": "PLA Sansha Garrison",
+    "branch": "navy",
+    "lat": 16.833,
+    "lng": 112.333
+  },
+  {
+    "name": "Fiery Cross Reef",
+    "country": "China",
+    "operator": "PLA (SCS outpost)",
+    "branch": "air_force",
+    "lat": 9.550,
+    "lng": 112.892
+  },
+  {
+    "name": "Subi Reef",
+    "country": "China",
+    "operator": "PLA (SCS outpost)",
+    "branch": "air_force",
+    "lat": 10.923,
+    "lng": 114.083
+  },
+  {
+    "name": "Mischief Reef",
+    "country": "China",
+    "operator": "PLA (SCS outpost)",
+    "branch": "navy",
+    "lat": 9.904,
+    "lng": 115.536
+  },
+  {
+    "name": "Dehua PLARF Base (Base 613)",
+    "country": "China",
+    "operator": "PLARF 61 Base",
+    "branch": "missile",
+    "lat": 25.494,
+    "lng": 118.241
+  },
+  {
+    "name": "Huangshan PLARF Base (Base 612)",
+    "country": "China",
+    "operator": "PLARF 61 Base",
+    "branch": "missile",
+    "lat": 29.714,
+    "lng": 118.337
+  },
+  {
+    "name": "Jiande PLARF Base",
+    "country": "China",
+    "operator": "PLARF 61 Base",
+    "branch": "missile",
+    "lat": 29.480,
+    "lng": 119.281
+  },
+  {
+    "name": "Ganzhou PLARF Base",
+    "country": "China",
+    "operator": "PLARF 61 Base",
+    "branch": "missile",
+    "lat": 25.831,
+    "lng": 114.935
+  },
+  {
+    "name": "Meizhou PLARF Base",
+    "country": "China",
+    "operator": "PLARF 61 Base",
+    "branch": "missile",
+    "lat": 24.288,
+    "lng": 116.122
+  },
+  {
+    "name": "Leping PLARF Base",
+    "country": "China",
+    "operator": "PLARF 62 Base",
+    "branch": "missile",
+    "lat": 28.963,
+    "lng": 117.129
+  },
+  {
+    "name": "Nanyang PLARF Base",
+    "country": "China",
+    "operator": "PLARF 63 Base",
+    "branch": "missile",
+    "lat": 33.003,
+    "lng": 112.528
+  },
+  {
+    "name": "Luoyang PLARF Base",
+    "country": "China",
+    "operator": "PLARF 63 Base",
+    "branch": "missile",
+    "lat": 34.620,
+    "lng": 112.454
+  },
+  {
+    "name": "Haiyang PLARF Base (ICBM)",
+    "country": "China",
+    "operator": "PLARF 65 Base",
+    "branch": "missile",
+    "lat": 36.776,
+    "lng": 121.158
+  },
+  {
+    "name": "Sundian PLARF Base (ICBM)",
+    "country": "China",
+    "operator": "PLARF 66 Base",
+    "branch": "missile",
+    "lat": 40.200,
+    "lng": 113.200
+  },
+
+  {
+    "name": "Vladivostok (Pacific Fleet HQ)",
+    "country": "Russia",
+    "operator": "Russian Pacific Fleet",
+    "branch": "navy",
+    "lat": 43.114,
+    "lng": 131.885
+  },
+  {
+    "name": "Vilyuchinsk SSBN Base",
+    "country": "Russia",
+    "operator": "Russian Pacific Fleet (SSBN)",
+    "branch": "navy",
+    "lat": 52.929,
+    "lng": 158.405
+  },
+  {
+    "name": "Yelizovo Air Base (Kamchatka)",
+    "country": "Russia",
+    "operator": "Russian VKS / Pacific Fleet Aviation",
+    "branch": "air_force",
+    "lat": 53.167,
+    "lng": 158.454
+  },
+  {
+    "name": "Khabarovsk-Bolshoy Air Base",
+    "country": "Russia",
+    "operator": "Russian VKS",
+    "branch": "air_force",
+    "lat": 48.528,
+    "lng": 135.188
+  },
+  {
+    "name": "Ukrainka Air Base (Tu-95 bomber)",
+    "country": "Russia",
+    "operator": "Russian VKS Long-Range Aviation",
+    "branch": "air_force",
+    "lat": 51.170,
+    "lng": 128.400
+  },
+  {
+    "name": "Fokino Naval Base",
+    "country": "Russia",
+    "operator": "Russian Pacific Fleet",
+    "branch": "navy",
+    "lat": 42.961,
+    "lng": 132.447
+  },
+  {
+    "name": "Sovgavan Naval Base",
+    "country": "Russia",
+    "operator": "Russian Pacific Fleet",
+    "branch": "navy",
+    "lat": 48.966,
+    "lng": 140.291
+  },
+  {
+    "name": "Vozdvizhenka Air Base",
+    "country": "Russia",
+    "operator": "Russian VKS",
+    "branch": "air_force",
+    "lat": 43.907,
+    "lng": 131.984
+  },
+  {
+    "name": "Etorofu / Iturup (Kuril Islands)",
+    "country": "Russia",
+    "operator": "Russian Army 18th MG Div",
+    "branch": "army",
+    "lat": 44.927,
+    "lng": 147.863
+  },
+
+  {
+    "name": "Yongbyon Nuclear Complex",
+    "country": "North Korea",
+    "operator": "DPRK Nuclear Program",
+    "branch": "nuclear",
+    "lat": 39.796,
+    "lng": 125.754
+  },
+  {
+    "name": "Punggye-ri Nuclear Test Site",
+    "country": "North Korea",
+    "operator": "DPRK Nuclear Program",
+    "branch": "nuclear",
+    "lat": 41.281,
+    "lng": 129.104
+  },
+  {
+    "name": "Sinpo Submarine Base",
+    "country": "North Korea",
+    "operator": "KPN (SLBM)",
+    "branch": "navy",
+    "lat": 40.024,
+    "lng": 128.178
+  },
+  {
+    "name": "Sohae Satellite Launching Station",
+    "country": "North Korea",
+    "operator": "DPRK NADA",
+    "branch": "missile",
+    "lat": 39.660,
+    "lng": 124.705
+  },
+  {
+    "name": "Tonghae Satellite Launching Ground",
+    "country": "North Korea",
+    "operator": "DPRK NADA",
+    "branch": "missile",
+    "lat": 40.856,
+    "lng": 129.665
+  },
+  {
+    "name": "Kaechon Air Base",
+    "country": "North Korea",
+    "operator": "KPAF",
+    "branch": "air_force",
+    "lat": 39.752,
+    "lng": 125.890
+  },
+  {
+    "name": "Wonsan-Kalma Air Base",
+    "country": "North Korea",
+    "operator": "KPAF",
+    "branch": "air_force",
+    "lat": 39.167,
+    "lng": 127.487
+  },
+  {
+    "name": "Nampo Naval Base",
+    "country": "North Korea",
+    "operator": "KPN West Fleet",
+    "branch": "navy",
+    "lat": 38.737,
+    "lng": 125.408
+  },
+  {
+    "name": "Haeju Forward Naval Base",
+    "country": "North Korea",
+    "operator": "KPN",
+    "branch": "navy",
+    "lat": 38.033,
+    "lng": 125.714
+  },
+  {
+    "name": "Koksan Long-Range Artillery Base",
+    "country": "North Korea",
+    "operator": "KPA Artillery Corps",
+    "branch": "army",
+    "lat": 38.330,
+    "lng": 126.586
+  },
+
+  {
+    "name": "Hualien Air Force Base (Jiashan)",
+    "country": "Taiwan",
+    "operator": "ROCAF 5th TFW",
+    "branch": "air_force",
+    "lat": 24.024,
+    "lng": 121.617
+  },
+  {
+    "name": "Ching Chuan Kang Air Base",
+    "country": "Taiwan",
+    "operator": "ROCAF 3rd TFW",
+    "branch": "air_force",
+    "lat": 24.264,
+    "lng": 120.621
+  },
+  {
+    "name": "Zuoying Naval Base",
+    "country": "Taiwan",
+    "operator": "ROCN Fleet Command",
+    "branch": "navy",
+    "lat": 22.702,
+    "lng": 120.268
+  },
+  {
+    "name": "Tainan Air Force Base",
+    "country": "Taiwan",
+    "operator": "ROCAF 1st TFW",
+    "branch": "air_force",
+    "lat": 22.951,
+    "lng": 120.206
+  },
+  {
+    "name": "Pingtung Air Base (South)",
+    "country": "Taiwan",
+    "operator": "ROCAF 6th Mixed Wing",
+    "branch": "air_force",
+    "lat": 22.673,
+    "lng": 120.462
+  },
+  {
+    "name": "Hsinchu Air Force Base",
+    "country": "Taiwan",
+    "operator": "ROCAF 2nd TFW",
+    "branch": "air_force",
+    "lat": 24.818,
+    "lng": 120.939
+  },
+  {
+    "name": "Suao Naval Base",
+    "country": "Taiwan",
+    "operator": "ROCN 168th Fleet",
+    "branch": "navy",
+    "lat": 24.594,
+    "lng": 121.862
+  },
+  {
+    "name": "Taitung Zhihang Air Base",
+    "country": "Taiwan",
+    "operator": "ROCAF 7th FTG",
+    "branch": "air_force",
+    "lat": 22.793,
+    "lng": 121.182
+  },
+
+  {
+    "name": "Subic Bay (EDCA site)",
+    "country": "Philippines",
+    "operator": "Philippine Navy / US EDCA",
+    "branch": "navy",
+    "lat": 14.794,
+    "lng": 120.281
+  },
+  {
+    "name": "Clark Air Base (EDCA site)",
+    "country": "Philippines",
+    "operator": "Philippine Air Force / US EDCA",
+    "branch": "air_force",
+    "lat": 15.186,
+    "lng": 120.560
+  },
+  {
+    "name": "Basa Air Base",
+    "country": "Philippines",
+    "operator": "Philippine Air Force",
+    "branch": "air_force",
+    "lat": 14.988,
+    "lng": 120.493
+  },
+  {
+    "name": "Antonio Bautista Air Base (Palawan)",
+    "country": "Philippines",
+    "operator": "Philippine Air Force",
+    "branch": "air_force",
+    "lat": 9.742,
+    "lng": 118.759
+  },
+  {
+    "name": "Lal-lo (EDCA site, Cagayan)",
+    "country": "Philippines",
+    "operator": "Philippine Army / US EDCA",
+    "branch": "army",
+    "lat": 18.200,
+    "lng": 121.659
+  },
+  {
+    "name": "Balabac Naval Station",
+    "country": "Philippines",
+    "operator": "Philippine Navy",
+    "branch": "navy",
+    "lat": 7.986,
+    "lng": 117.062
+  },
+
+  {
+    "name": "RAAF Base Darwin",
+    "country": "Australia",
+    "operator": "RAAF / USMC Rotational",
+    "branch": "air_force",
+    "lat": -12.415,
+    "lng": 130.876
+  },
+  {
+    "name": "RAAF Base Tindal",
+    "country": "Australia",
+    "operator": "RAAF / USAF Rotational",
+    "branch": "air_force",
+    "lat": -14.521,
+    "lng": 132.378
+  },
+  {
+    "name": "HMAS Stirling (Garden Island)",
+    "country": "Australia",
+    "operator": "RAN / AUKUS submarine base",
+    "branch": "navy",
+    "lat": -32.235,
+    "lng": 115.691
+  },
+  {
+    "name": "Pine Gap (Joint Intelligence)",
+    "country": "Australia",
+    "operator": "ASD / CIA Joint Facility",
+    "branch": "army",
+    "lat": -23.799,
+    "lng": 133.737
+  }
+]

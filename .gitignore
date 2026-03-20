@@ -1,0 +1,159 @@
+# =====================================================
+# NEXUS OSINT Platform — .gitignore
+# =====================================================
+
+# ── Dependencies ──
+node_modules/
+.pnpm-store/
+bower_components/
+
+# ── Python ──
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+.uv/
+*.whl
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ── Build Output ──
+dist/
+build/
+out/
+*.tsbuildinfo
+*.js.map
+
+# ── Environment & Secrets ──
+.env
+.env.local
+.env.*.local
+.env.production
+*.pem
+*.key
+*.cert
+
+# ── IDE & Editor ──
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+
+# ── OS Files ──
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── Docker ──
+docker-compose.override.yml
+
+# ── Logs ──
+logs/
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# ── Test & Coverage ──
+coverage/
+.nyc_output/
+htmlcov/
+.pytest_cache/
+.coverage
+.coverage.*
+*.cover
+*.lcov
+junit.xml
+test-results/
+
+# ── Turbo ──
+.turbo/
+
+# ── Electron ──
+release/
+
+# ── MinIO Data ──
+minio_data/
+
+# ── Neo4j Data ──
+neo4j_data/
+
+# ── PostgreSQL Data ──
+postgres_data/
+pgdata/
+
+# ── Redis Data ──
+redis_data/
+dump.rdb
+
+# ── Elasticsearch Data ──
+es_data/
+elasticsearch_data/
+
+# ── Kafka Data ──
+kafka_data/
+zookeeper_data/
+
+# ── Temp Files ──
+tmp/
+temp/
+*.tmp
+*.bak
+*.orig
+
+# ── Jupyter ──
+.ipynb_checkpoints/
+
+# ── Celery ──
+celerybeat-schedule
+celerybeat.pid
+
+# ── Ruff / Mypy / Pyright ──
+.ruff_cache/
+.mypy_cache/
+.pyright/
+.dmypy.json
+dmypy.json
+
+# ── Claude Code ──
+.claude/
+
+# ── Prometheus / Grafana Data ──
+prometheus_data/
+grafana_data/
+
+# ── HuggingFace / ML Models ──
+.huggingface/
+models/
+*.onnx
+*.pt
+*.pth
+*.bin
+*.safetensors
+
+# ── Satellite TLE Cache (regenerated) ──
+apps/api/data/sat_gp_cache.json
+
+# ── Miscellaneous ──
+*.sqlite3
+*.db
+.cache/
+.parcel-cache/
+*.pid

@@ -1,0 +1,15 @@
+# Development overrides — use with:
+# docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
+
+services:
+  neo4j:
+    environment:
+      NEO4J_dbms_logs_debug_level: "DEBUG"
+
+  elasticsearch:
+    environment:
+      - logger.level=debug
+
+  kafka:
+    environment:
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"

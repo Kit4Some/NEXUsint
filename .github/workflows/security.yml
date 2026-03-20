@@ -1,0 +1,75 @@
+name: Security Scan
+
+on:
+  schedule:
+    - cron: "0 6 * * 1"  # Weekly on Monday at 06:00 UTC
+  pull_request:
+    branches: [main]
+    paths:
+      - "apps/api/**"
+      - "apps/desktop/package.json"
+      - "pnpm-lock.yaml"
+
+jobs:
+  dependency-audit:
+    name: Dependency Audit
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "pnpm"
+      - name: Install Python dependencies
+        run: cd apps/api && uv sync --dev
+      - name: Python dependency audit
+        run: cd apps/api && uv run pip-audit
+        continue-on-error: true
+      - name: Install Node dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Node dependency audit
+        run: pnpm audit --audit-level=high
+        continue-on-error: true
+
+  sast:
+    name: Static Analysis
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v4
+        with:
+          version: "latest"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install dependencies
+        run: cd apps/api && uv sync --dev
+      - name: Run Bandit
+        run: cd apps/api && uv run bandit -r nexus -c pyproject.toml -f json -o bandit-report.json || true
+      - name: Upload Bandit report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: bandit-report
+          path: apps/api/bandit-report.json
+
+  secret-scan:
+    name: Secret Scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: TruffleHog scan
+        uses: trufflesecurity/trufflehog@main
+        with:
+          extra_args: --only-verified

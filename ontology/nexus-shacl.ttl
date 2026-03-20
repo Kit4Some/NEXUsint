@@ -1,0 +1,118 @@
+@prefix sh: <http://www.w3.org/ns/shacl#> .
+@prefix nexus: <http://nexus-osint.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+# =============================================================================
+# NEXUS OSINT — SHACL Shapes for Graph Validation
+# =============================================================================
+
+# --- Entity Base Shape ---
+nexus:EntityShape a sh:NodeShape ;
+    sh:targetClass nexus:Entity ;
+    sh:property [
+        sh:path nexus:confidence ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 1.0 ;
+        sh:message "Confidence must be a float between 0.0 and 1.0" ;
+        sh:severity sh:Warning ;
+    ] ;
+    sh:property [
+        sh:path nexus:sourceInt ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "sourceInt is required for all entities" ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path nexus:riskScore ;
+        sh:datatype xsd:float ;
+        sh:minInclusive 0.0 ;
+        sh:maxInclusive 10.0 ;
+        sh:message "Risk score must be between 0.0 and 10.0" ;
+        sh:severity sh:Warning ;
+    ] .
+
+# --- Person Shape ---
+nexus:PersonShape a sh:NodeShape ;
+    sh:targetClass nexus:Person ;
+    sh:property [
+        sh:path nexus:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "Person must have a name" ;
+        sh:severity sh:Warning ;
+    ] .
+
+# --- Location Shape ---
+nexus:LocationShape a sh:NodeShape ;
+    sh:targetClass nexus:Location ;
+    sh:property [
+        sh:path nexus:latitude ;
+        sh:datatype xsd:float ;
+        sh:minInclusive -90.0 ;
+        sh:maxInclusive 90.0 ;
+        sh:message "Latitude must be between -90 and 90" ;
+        sh:severity sh:Violation ;
+    ] ;
+    sh:property [
+        sh:path nexus:longitude ;
+        sh:datatype xsd:float ;
+        sh:minInclusive -180.0 ;
+        sh:maxInclusive 180.0 ;
+        sh:message "Longitude must be between -180 and 180" ;
+        sh:severity sh:Violation ;
+    ] .
+
+# --- IP Address Shape ---
+nexus:IPAddressShape a sh:NodeShape ;
+    sh:targetClass nexus:IPAddress ;
+    sh:property [
+        sh:path nexus:address ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "IP Address must have an address value" ;
+        sh:severity sh:Violation ;
+    ] .
+
+# --- Domain Shape ---
+nexus:DomainShape a sh:NodeShape ;
+    sh:targetClass nexus:Domain ;
+    sh:property [
+        sh:path nexus:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "Domain must have a name" ;
+        sh:severity sh:Violation ;
+    ] .
+
+# --- ThreatActor Shape ---
+nexus:ThreatActorShape a sh:NodeShape ;
+    sh:targetClass nexus:ThreatActor ;
+    sh:property [
+        sh:path nexus:name ;
+        sh:datatype xsd:string ;
+        sh:minCount 1 ;
+        sh:message "Threat actor must have a name" ;
+        sh:severity sh:Violation ;
+    ] .
+
+# --- Relationship Shapes ---
+nexus:ResolvesToShape a sh:PropertyShape ;
+    sh:path nexus:resolvesTo ;
+    sh:class nexus:IPAddress ;
+    sh:message "resolvesTo must point to an IPAddress" ;
+    sh:severity sh:Warning .
+
+nexus:LocatedAtShape a sh:PropertyShape ;
+    sh:path nexus:locatedAt ;
+    sh:class nexus:Location ;
+    sh:message "locatedAt must point to a Location" ;
+    sh:severity sh:Warning .
+
+nexus:AttributedToShape a sh:PropertyShape ;
+    sh:path nexus:attributedTo ;
+    sh:class nexus:ThreatActor ;
+    sh:message "attributedTo must point to a ThreatActor" ;
+    sh:severity sh:Warning .

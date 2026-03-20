@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ report.title | default("Intelligence Report") }}</title>
+  <style>
+    :root {
+      --bg: #0f1419;
+      --surface: #1a1f2e;
+      --border: #2a3040;
+      --text: #e1e4e8;
+      --muted: #8b949e;
+      --accent: #58a6ff;
+      --danger: #f85149;
+      --warning: #d29922;
+      --success: #3fb950;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; padding: 2rem; }
+    .classification { text-align: center; color: var(--danger); font-weight: 700; font-size: 0.85rem; letter-spacing: 2px; padding: 0.5rem; border: 2px solid var(--danger); margin-bottom: 2rem; }
+    h1 { font-size: 1.8rem; margin-bottom: 0.5rem; color: var(--accent); }
+    h2 { font-size: 1.3rem; margin: 2rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid var(--border); color: var(--accent); }
+    h3 { font-size: 1.1rem; margin: 1rem 0 0.5rem; color: var(--text); }
+    .meta { color: var(--muted); font-size: 0.9rem; margin-bottom: 2rem; }
+    .summary-box { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.5rem; margin: 1rem 0; }
+    .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; margin: 1rem 0; }
+    .metric-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1rem; text-align: center; }
+    .metric-card .value { font-size: 1.8rem; font-weight: 700; color: var(--accent); }
+    .metric-card .label { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; }
+    table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: 0.9rem; }
+    th { background: var(--surface); color: var(--accent); text-align: left; padding: 0.6rem 0.8rem; border: 1px solid var(--border); }
+    td { padding: 0.5rem 0.8rem; border: 1px solid var(--border); }
+    tr:nth-child(even) { background: rgba(26, 31, 46, 0.5); }
+    .risk-critical { color: var(--danger); font-weight: 700; }
+    .risk-high { color: #ff7b72; font-weight: 600; }
+    .risk-medium { color: var(--warning); }
+    .risk-low { color: var(--success); }
+    .rec { background: var(--surface); border-left: 3px solid var(--accent); padding: 0.8rem 1rem; margin: 0.5rem 0; border-radius: 0 4px 4px 0; }
+    .rec.high { border-left-color: var(--danger); }
+    .rec.medium { border-left-color: var(--warning); }
+    .rec .priority { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; }
+    .confidence-bar { display: inline-block; height: 8px; border-radius: 4px; background: var(--accent); }
+    .confidence-bg { display: inline-block; width: 80px; height: 8px; border-radius: 4px; background: var(--border); }
+  </style>
+</head>
+<body>
+  <div class="classification">{{ report.classification | default("UNCLASSIFIED") }}</div>
+
+  <h1>{{ report.title | default("Intelligence Report") }}</h1>
+  <div class="meta">
+    Investigation: {{ report.investigation_id | default("N/A") }} &bull;
+    Generated: {{ generated_at }}
+  </div>
+
+  {% if report.executive_summary %}
+  <h2>Executive Summary</h2>
+  <div class="summary-box">
+    <p>{{ report.executive_summary.summary }}</p>
+  </div>
+  <div class="metrics-grid">
+    <div class="metric-card">
+      <div class="value">{{ report.executive_summary.entity_count }}</div>
+      <div class="label">Entities</div>
+    </div>
+    <div class="metric-card">
+      <div class="value">{{ report.executive_summary.relationship_count }}</div>
+      <div class="label">Relationships</div>
+    </div>
+    <div class="metric-card">
+      <div class="value">{{ "%.1f" | format(report.executive_summary.average_confidence * 100) }}%</div>
+      <div class="label">Avg Confidence</div>
+    </div>
+    <div class="metric-card">
+      <div class="value">{{ report.executive_summary.high_risk_entity_count }}</div>
+      <div class="label">High-Risk</div>
+    </div>
+  </div>
+  {% endif %}
+
+  {% if report.entity_analysis %}
+  <h2>Entity Analysis</h2>
+  {% for entity_type, entities in report.entity_analysis.groups.items() %}
+  <h3>{{ entity_type }} ({{ entities | length }})</h3>
+  <table>
+    <thead>
+      <tr><th>Name</th><th>Confidence</th><th>Risk</th><th>Source</th><th>Grade</th></tr>
+    </thead>
+    <tbody>
+      {% for e in entities[:20] %}
+      <tr>
+        <td>{{ e.name }}</td>
+        <td>
+          <span class="confidence-bg"><span class="confidence-bar" style="width: {{ (e.confidence * 80) | round }}px"></span></span>
+          {{ "%.0f" | format(e.confidence * 100) }}%
+        </td>
+        <td class="{% if e.risk_score >= 9 %}risk-critical{% elif e.risk_score >= 7 %}risk-high{% elif e.risk_score >= 4 %}risk-medium{% else %}risk-low{% endif %}">
+          {{ "%.1f" | format(e.risk_score) }}
+        </td>
+        <td>{{ e.source_int }}</td>
+        <td>{{ e.reliability_grade }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endfor %}
+  {% endif %}
+
+  {% if report.risk_assessment %}
+  <h2>Risk Assessment</h2>
+  <div class="metrics-grid">
+    {% for level in ["critical", "high", "medium", "low"] %}
+    <div class="metric-card">
+      <div class="value {% if level == 'critical' %}risk-critical{% elif level == 'high' %}risk-high{% elif level == 'medium' %}risk-medium{% else %}risk-low{% endif %}">
+        {{ report.risk_assessment.risk_distribution.get(level, 0) }}
+      </div>
+      <div class="label">{{ level | capitalize }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% if report.risk_assessment.critical_entities %}
+  <h3>Critical Entities</h3>
+  <table>
+    <thead><tr><th>Name</th><th>Type</th><th>Risk Score</th><th>Confidence</th></tr></thead>
+    <tbody>
+      {% for e in report.risk_assessment.critical_entities %}
+      <tr>
+        <td>{{ e.name }}</td><td>{{ e.type }}</td>
+        <td class="risk-critical">{{ "%.1f" | format(e.risk_score) }}</td>
+        <td>{{ "%.0f" | format(e.confidence * 100) }}%</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+  {% endif %}
+
+  {% if report.confidence_metrics %}
+  <h2>Confidence Metrics</h2>
+  <p>Overall average confidence: <strong>{{ "%.1f" | format(report.confidence_metrics.overall_average * 100) }}%</strong></p>
+  {% if report.confidence_metrics.confidence_by_int %}
+  <table>
+    <thead><tr><th>INT Source</th><th>Avg Confidence</th><th>Entity Count</th></tr></thead>
+    <tbody>
+      {% for source, avg in report.confidence_metrics.confidence_by_int.items() %}
+      <tr>
+        <td>{{ source }}</td>
+        <td>{{ "%.0f" | format(avg * 100) }}%</td>
+        <td>{{ report.confidence_metrics.entity_count_by_int.get(source, 0) }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+  {% endif %}
+
+  {% if report.conflict_notes %}
+  <h2>Conflict Notes</h2>
+  {% if report.conflict_notes.conflicting_entities %}
+  <h3>Conflicting Evidence ({{ report.conflict_notes.conflict_count }})</h3>
+  {% for c in report.conflict_notes.conflicting_entities %}
+  <div class="summary-box">
+    <strong>{{ c.name }}</strong> — {{ c.note }}<br>
+    <span class="meta">Sources: {{ c.sources | join(", ") }}</span>
+  </div>
+  {% endfor %}
+  {% endif %}
+  {% if report.conflict_notes.low_confidence_entities %}
+  <h3>Low Confidence Entities ({{ report.conflict_notes.low_confidence_count }})</h3>
+  <table>
+    <thead><tr><th>Name</th><th>Confidence</th><th>Source</th></tr></thead>
+    <tbody>
+      {% for e in report.conflict_notes.low_confidence_entities %}
+      <tr><td>{{ e.name }}</td><td>{{ "%.0f" | format(e.confidence * 100) }}%</td><td>{{ e.source_int }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% endif %}
+  {% endif %}
+
+  {% if report.recommendations %}
+  <h2>Recommendations</h2>
+  {% for rec in report.recommendations.recommendations %}
+  <div class="rec {{ rec.priority }}">
+    <span class="priority {% if rec.priority == 'high' %}risk-high{% elif rec.priority == 'medium' %}risk-medium{% else %}risk-low{% endif %}">{{ rec.priority }}</span>
+    — {{ rec.recommendation }}
+  </div>
+  {% endfor %}
+  {% endif %}
+
+  <div class="classification" style="margin-top: 3rem;">{{ report.classification | default("UNCLASSIFIED") }}</div>
+</body>
+</html>
