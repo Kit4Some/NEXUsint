@@ -32,11 +32,9 @@
 ---
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=XqhBRnBUe3U">
-    <img src="https://img.youtube.com/vi/XqhBRnBUe3U/0.jpg" alt="NEXUS Demo — Multi-INT Fusion OSINT Platform" width="600">
-  </a>
+  <video src="[https://github.com/user-attachments/assets/4e21d07d-239a-4ca9-a59d-123c69a04dfb]" controls width="600"></video>
   <br>
-  <em>▶ NEXUS in Action — Real-time Multi-INT OSINT fusion with 30+ live data sources</em>
+  <em>NEXUS in Action — Real-time Multi-INT OSINT fusion with 30+ live data sources</em>
 </p>
 
 ---
