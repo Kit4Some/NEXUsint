@@ -39,7 +39,7 @@
     "react-resizable-panels": "^2.1.0",
     "recharts": "^2.13.0",
     "socket.io-client": "^4.8.0",
-    "zustand": "^5.0.0"
+    "zustand": "^5.0.12"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.0",
