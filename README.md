@@ -32,11 +32,11 @@
 ---
 
 <p align="center">
-  <a href="pics/osint_demo.mp4">
-    <img src="pics/OSINT_2D.png" alt="NEXUS Demo Video — Click to watch" width="100%">
+  <a href="https://www.youtube.com/watch?v=XqhBRnBUe3U">
+    <img src="https://img.youtube.com/vi/XqhBRnBUe3U/0.jpg" alt="NEXUS Demo — Multi-INT Fusion OSINT Platform" width="600">
   </a>
   <br>
-  <em>▶ Click the image above to watch the demo video — Real-time Multi-INT OSINT fusion with 30+ live data sources</em>
+  <em>▶ NEXUS in Action — Real-time Multi-INT OSINT fusion with 30+ live data sources</em>
 </p>
 
 ---
