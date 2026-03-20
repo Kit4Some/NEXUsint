@@ -32,11 +32,11 @@
 ---
 
 <p align="center">
-  <video src="pics/osint_demo.mp4" width="100%" autoplay loop muted playsinline>
-    Your browser does not support the video tag.
-  </video>
+  <a href="pics/osint_demo.mp4">
+    <img src="pics/OSINT_2D.png" alt="NEXUS Demo Video — Click to watch" width="100%">
+  </a>
   <br>
-  <em>NEXUS in Action — Real-time Multi-INT OSINT fusion with 30+ live data sources</em>
+  <em>▶ Click the image above to watch the demo video — Real-time Multi-INT OSINT fusion with 30+ live data sources</em>
 </p>
 
 ---
@@ -47,12 +47,6 @@
   <img src="pics/OSINT_2D.png" alt="NEXUS 2D Map View — Global entity relationship visualization with multi-layer overlays" width="100%">
   <br>
   <em>2D Map View — Global entity network visualization with Deck.gl multi-layer rendering</em>
-</p>
-
-<p align="center">
-  <img src="pics/OSINT_3D.png" alt="NEXUS 3D Globe View — Entity inspection with connection analysis on CesiumJS globe" width="100%">
-  <br>
-  <em>3D Globe View — Entity inspection with real-time connection analysis</em>
 </p>
 
 <p align="center">
