@@ -52,7 +52,7 @@ jobs:
           ALIENVAULT_OTX_API_KEY: "test"
       - name: Upload coverage
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: coverage-report
           path: apps/api/coverage.xml
@@ -98,7 +98,7 @@ jobs:
       - name: Build
         run: pnpm --filter @nexus/desktop build
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: desktop-${{ matrix.os }}
           path: apps/desktop/release/*
