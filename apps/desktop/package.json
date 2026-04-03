@@ -19,7 +19,7 @@
     "@deck.gl/layers": "^9.0.0",
     "@deck.gl/mapbox": "^9.0.0",
     "@deck.gl/react": "^9.0.0",
-    "@luma.gl/core": "^9.2.6",
+    "@luma.gl/core": "^9.3.2",
     "@luma.gl/webgl": "^9.2.6",
     "@nexus/shared-types": "workspace:*",
     "@react-sigma/core": "^4.0.0",
