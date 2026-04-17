@@ -31,7 +31,7 @@ dependencies = [
     "pydantic>=2.10.0",
     "pydantic-settings>=2.6.0",
     # Authentication
-    "python-jose[cryptography]>=3.3.0",
+    "python-jose[cryptography]>=3.5.0",
     "bcrypt>=4.0.0",
     # Rate limiting
     "slowapi>=0.1.9",
