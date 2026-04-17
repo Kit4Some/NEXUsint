@@ -14,7 +14,7 @@ dependencies = [
     # Web framework
     "fastapi>=0.115.0",
     "uvicorn[standard]>=0.32.0",
-    "python-multipart>=0.0.12",
+    "python-multipart>=0.0.26",
     # GraphQL
     "strawberry-graphql[fastapi]>=0.250.0",
     # WebSocket
