@@ -71,7 +71,7 @@ dependencies = [
     # Monitoring (Phase 4)
     "prometheus-client>=0.21.0",
     # Search (Phase 5)
-    "elasticsearch[async]>=8.17.0",
+    "elasticsearch[async]>=9.3.0",
     # Live feed (Phase 5 — Shadowbroker engine)
     "feedparser>=6.0.0",
     "yfinance>=0.2.0",
